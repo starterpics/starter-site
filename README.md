@@ -1,29 +1,205 @@
-# Create T3 App
+# 🚀 Starter.pics
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+### **The Ultimate Next.js Starter Kit for AI Image Websites**
 
-## What's next? How do I make an app with this?
+**Turn your 10,000 AI images into real traffic.**
+_Not just another template — a Headless DAM + SEO Engine._
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+Starter.pics is a **long-term maintained, production-grade Next.js Starter Kit** built specifically for **AI image websites**.
+It’s not a “Pinterest clone template.” It’s the **visual content infrastructure** that turns your images into **Google traffic assets**.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## 🎯 Why Starter.pics?
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+Most developers share the same pain:
 
-## Learn More
+> **Tens of thousands of Midjourney / Stable Diffusion images sitting on their hard drive — zero traffic, zero monetization.**
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+Existing GitHub templates are either too basic, too generic, missing an admin system, or completely ignore SEO architecture.
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+You don’t need a component playground.
+You need something **fast to launch, SEO-safe, scalable, and maintainable**.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+So we built **Starter.pics**.
 
-## How do I deploy this?
+# 🧱 Not a Template — a Product-Level Starter Kit
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+Starter.pics =
+**Headless DAM + SEO Engine + Admin Dashboard + AI Utilities**
+
+Build any type of image-focused product:
+
+- Curated image collections
+- AI PFP websites
+- AI illustration libraries
+- AI prompt galleries
+- Design asset libraries
+- Programmatic curated-topic sites
+- Long-term SEO traffic machines (run by one person)
+
+You’re not buying a frontend theme —
+you’re getting **the full foundation of a real product**.
+
+# ⚔️ Core Advantage: Anti-Spam Architecture
+
+### **Google-Safe by Design**
+
+Unlike Pinterest, wallpaper sites, or content farms, Starter.pics has one mission:
+
+> **Zero thin content. Zero auto-generated spam. Zero Google risk.**
+
+### 1) **Hidden Tag System (Tags ≠ Public Pages)**
+
+Tags never become URLs automatically — preventing thousands of thin pages.
+
+### 2) **Curated Page System (Manually Created SEO Pages)**
+
+Only pages created intentionally by you are public.
+→ High-quality
+→ Fully controlled
+→ No accidental spam
+
+### 3) **AI Vision Long Descriptions**
+
+Every image gets auto-generated long-form text:
+→ Rich, unique content
+→ Avoids “empty image-only” pages
+
+### 4) **Manual Publishing (MVP)**
+
+No cron jobs, no auto-generation.
+→ The safest possible SEO posture.
+
+Starter.pics aims to be:
+**the world’s most SEO-safe AI image starter kit.**
+
+# ⚡ Technical Moat
+
+### **High Performance, Low Cost, Future-Proof**
+
+- **Prisma + PostgreSQL (Neon)**
+  Fast, portable, vendor-lock free.
+
+- **Browser-side Pre-Compressed WebP → Direct Upload to R2**
+  Ultra-fast, near-zero server cost, no Vercel Image dependency.
+
+- **Next.js (App Router)**
+  Modern, stable, future-proof architecture.
+
+- **Tailwind + Shadcn UI**
+  Scalable design system with excellent DX.
+
+- **Vercel AI SDK**
+  Built-in for AI descriptions and future batch tools.
+
+# 🖥️ Admin Dashboard
+
+### **A Real Product, Not Just a Grid Viewer**
+
+Starter.pics includes a full **production-grade admin system**:
+
+- Image management (bulk upload, bulk tag, bulk delete)
+- Tag management
+- Page creation (your only public SEO entry points)
+- SEO fields
+- Clean data structure UI
+- Professional workflow:
+  **Import → Describe → Tag → Publish**
+
+This admin panel _is_ the product.
+
+# 🧩 Core Data Model
+
+### **Clean, Minimal, SEO-Friendly**
+
+- **Image**
+- **Tag** (internal only)
+- **Page** (public curated page)
+- **ImageTag** (Image ↔ Tag)
+- **PageTag** (Page ↔ Tag)
+
+Tags never generate public pages automatically.
+All SEO output is 100% curated and intentional.
+
+# 📦 Current Version: MVP (Manual, Safe, Minimal)
+
+The MVP intentionally excludes:
+
+- Auto publishing
+- Auto topic creation
+- Cron jobs
+- Fully programmatic SEO
+
+Everything is **manually curated** to ensure maximum SEO safety.
+
+Planned optional modules:
+
+- Automated topic pages
+- Scheduled drip publishing
+- Aggregation page generator
+- Advanced AI batch tools
+
+All while maintaining the **high-quality curated-site philosophy**.
+
+# 🧑‍💻 Who Is This For?
+
+### Perfect for:
+
+- Indie Hackers
+- SEO practitioners
+- Heavy AI art creators
+- Content curators
+- Developers familiar with modern web tech
+
+### Not for:
+
+- No-code beginners
+- People expecting a one-click SaaS
+- Users wanting Pinterest-scale infra out of the box
+
+Starter.pics is for developers who want to launch a
+**professional, high-quality AI image website fast**.
+
+# 💡 Open Source?
+
+No.
+Starter.pics is a **premium paid Starter Kit**.
+Purchase once → get full source → lifetime use.
+
+# 🛠️ Tech Stack
+
+- **Next.js (App Router)**
+- **TypeScript**
+- **Prisma + PostgreSQL**
+- **Cloudflare R2**
+- **Tailwind CSS**
+- **Shadcn UI**
+- **Vercel AI SDK**
+- **Better-Auth.js**
+
+# 🌟 Roadmap (Actively Maintained)
+
+- AI Vision long descriptions
+- Page image curator
+- Page templates
+- Infinite scroll waterfall layout
+- Search system
+- Bulk CSV import
+- EXIF cleaner & noise reducer
+- Custom field extensions
+- Controlled "Programmatic Topic Page Generator"
+
+This is a **continuously evolving starter kit**, not a one-off repo.
+
+# ❤️ Contribution / Issues
+
+Feedback, ideas, and feature requests are welcome.
+Open an issue to start a discussion.
+
+# 📬 Stay Updated
+
+Coming soon:
+
+- Official landing page
+- Demo site
+- Newsletter
+- Documentation Hub
