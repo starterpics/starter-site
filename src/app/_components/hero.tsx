@@ -1,6 +1,4 @@
-"use client";
-
-import { ArrowRight } from "lucide-react";
+import { CircleChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -29,11 +27,11 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" className="text-base">
+            <Button size="lg">
               Start Building Now
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <CircleChevronRight className="h-4 w-4" />
             </Button>
-            <Button variant="outline" size="lg" className="text-base">
+            <Button variant="outline" size="lg">
               View Live Demo
             </Button>
           </div>
