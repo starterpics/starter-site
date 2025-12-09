@@ -3,7 +3,6 @@
 import { motion, useInView } from "framer-motion";
 import {
   ArrowRight,
-  CheckCircle2,
   Database,
   Globe,
   Play,
@@ -40,20 +39,20 @@ export function Hero() {
                 transition={{ duration: 2, repeat: Infinity }}
               />
               <Terminal className="w-3 h-3" />
-              <span className="font-mono">SYSTEM_STATUS: READY</span>
+              <span className="font-mono">Production Ready</span>
             </div>
           </motion.div>
 
           {/* Main title area */}
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-20"
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 font-mono">
               <span className="block text-white mb-4">
-                Turn Your Images Into a
+                Transform Your Images Into
               </span>
               <motion.span
                 className="block bg-gradient-to-r from-green-400 via-green-300 to-emerald-400 bg-clip-text text-transparent relative"
@@ -63,7 +62,7 @@ export function Hero() {
                 transition={{ duration: 4, repeat: Infinity }}
                 style={{ backgroundSize: "200% 200%" }}
               >
-                Profitable Website
+                Revenue-Generating Sites
                 <motion.div
                   className="absolute -top-4 -right-4"
                   animate={{
@@ -83,131 +82,54 @@ export function Hero() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Stop letting your{" "}
-              <span className="text-white font-semibold">
-                thousands of images
-              </span>{" "}
-              sit unused. Build a professional image website that generates{" "}
+              Professional image websites with{" "}
               <span className="text-green-300 font-semibold">
-                real Google traffic
-              </span>{" "}
-              and revenue.
+                SEO optimization
+              </span>
+              , powerful admin tools, and{" "}
+              <span className="text-white font-semibold">
+                Google-safe architecture
+              </span>
+              . Launch in 24 hours.
             </motion.p>
           </motion.div>
 
           {/* CTA buttons area */}
           <motion.div
-            className="text-center mb-20"
+            className="text-center mb-24"
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               {/* Primary CTA */}
               <motion.button
-                className="relative group"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 text-black font-mono font-bold text-xl px-10 py-4 rounded-xl shadow-lg transition-all duration-300"
                 whileTap={{ scale: 0.98 }}
               >
-                {/* Background glow effect */}
-                <motion.div
-                  className="absolute -inset-1 bg-gradient-to-r from-green-500/20 via-emerald-500/15 to-green-500/20 rounded-2xl blur-sm"
-                  animate={{
-                    opacity: [0.6, 0.8, 0.6],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                  }}
-                />
-                <motion.div
-                  className="absolute inset-0 rounded-2xl border border-green-500/30"
-                  animate={{
-                    borderColor: [
-                      "rgba(34, 197, 94, 0.3)",
-                      "rgba(34, 197, 94, 0.5)",
-                      "rgba(34, 197, 94, 0.3)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                  }}
-                />
-
-                <div className="relative bg-gradient-to-br from-green-600 to-emerald-700 text-black font-mono font-bold text-xl px-10 py-5 rounded-2xl transition-all duration-300 backdrop-blur-xl shadow-2xl shadow-green-500/20">
-                  <div className="flex items-center justify-center gap-3">
-                    <Zap className="w-5 h-5" />
-                    <span>Start Building Now</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
+                <div className="flex items-center justify-center gap-3">
+                  <Zap className="w-5 h-5" />
+                  <span>Start Building</span>
+                  <ArrowRight className="w-5 h-5" />
                 </div>
               </motion.button>
 
               {/* Secondary CTA */}
               <motion.button
-                className="relative group"
+                className="border border-green-400/40 text-green-300 font-mono font-semibold text-lg px-10 py-4 rounded-xl backdrop-blur-sm transition-all duration-300"
                 whileTap={{ scale: 0.98 }}
               >
-                {/* Background glow effect */}
-                <motion.div
-                  className="absolute -inset-1 bg-gradient-to-r from-gray-700/10 via-gray-600/5 to-gray-700/10 rounded-2xl blur-sm"
-                  animate={{
-                    opacity: [0.3, 0.5, 0.3],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                  }}
-                />
-                <motion.div
-                  className="absolute inset-0 rounded-2xl border border-gray-600/20"
-                  animate={{
-                    borderColor: [
-                      "rgba(156, 163, 175, 0.2)",
-                      "rgba(156, 163, 175, 0.4)",
-                      "rgba(156, 163, 175, 0.2)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                  }}
-                />
-
-                <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/40 text-gray-200 font-mono font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300">
-                  <div className="flex items-center justify-center gap-3">
-                    <Play className="w-5 h-5" />
-                    <span>View Live Demo</span>
-                  </div>
+                <div className="flex items-center justify-center gap-3">
+                  <Play className="w-5 h-5" />
+                  <span>View Demo</span>
                 </div>
               </motion.button>
             </div>
-
-            {/* Additional info */}
-            <motion.div
-              className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 1 }}
-            >
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-400" />
-                <span>No coding required</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-400" />
-                <span>Launch in 24 hours</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-green-400" />
-                <span>100% Google safe</span>
-              </div>
-            </motion.div>
           </motion.div>
 
-          {/* Feature highlights */}
+          {/* Key Features Grid */}
           <motion.div
-            className="flex flex-wrap justify-center gap-8 mb-20"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.9 }}
@@ -215,30 +137,34 @@ export function Hero() {
             {[
               {
                 icon: Globe,
-                title: "SEO Optimized",
+                title: "SEO Ready",
+                desc: "Built for search engines",
               },
               {
                 icon: Shield,
                 title: "Google Safe",
+                desc: "Anti-spam architecture",
               },
               {
                 icon: Database,
-                title: "Admin Dashboard",
+                title: "Full CMS",
+                desc: "Complete admin dashboard",
               },
               {
                 icon: Zap,
-                title: "Launch Ready",
+                title: "Fast Deploy",
+                desc: "Launch in 24 hours",
               },
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-center gap-3 text-gray-300"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                className="text-center group"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
               >
                 <motion.div
-                  className="w-8 h-8 rounded-xl bg-gradient-to-br from-gray-800/90 to-gray-900/90 border border-gray-600/50 flex items-center justify-center shadow-lg"
+                  className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-gray-800/90 to-gray-900/90 border border-gray-600/50 flex items-center justify-center shadow-lg"
                   animate={{
                     boxShadow: [
                       "0 0 10px rgba(34, 197, 94, 0.1)",
@@ -252,14 +178,17 @@ export function Hero() {
                     delay: index * 0.3,
                   }}
                 >
-                  <feature.icon className="w-4 h-4 text-green-400" />
+                  <feature.icon className="w-6 h-6 text-green-400" />
                 </motion.div>
-                <span className="font-mono font-medium">{feature.title}</span>
+                <h3 className="text-white font-bold text-lg font-mono mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400 text-sm">{feature.desc}</p>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* Statistics data */}
+          {/* Bottom Stats */}
           <motion.div
             className="text-center border-t border-gray-800/60 pt-16"
             initial={{ opacity: 0, y: 30 }}
@@ -268,10 +197,10 @@ export function Hero() {
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: "$0", label: "Monthly hosting costs" },
-                { value: "10K+", label: "Images supported" },
-                { value: "< 24h", label: "Launch time" },
-                { value: "100%", label: "Google safe" },
+                { value: "$0", label: "Monthly hosting" },
+                { value: "10K+", label: "Images capacity" },
+                { value: "24h", label: "Launch time" },
+                { value: "100%", label: "SEO safe" },
               ].map((stat, index) => (
                 <motion.div
                   key={index}

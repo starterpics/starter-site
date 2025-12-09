@@ -13,38 +13,24 @@ import {
   TrendingUp,
   Zap,
 } from "lucide-react";
-import { useMemo, useRef } from "react";
-import { Badge } from "@/components/ui/badge";
+import { useRef } from "react";
 
 export function ForWho() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // 优化：预计算随机位置，避免每次渲染重新计算
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 15 }, (_, i) => ({
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        delay: Math.random() * 2,
-        duration: 3 + Math.random() * 2,
-      })),
-    [],
-  );
-
   return (
     <section ref={ref} className="py-32 relative overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-6">
-        {/* 优化的标题区域 */}
+        {/* Header区域 */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-24"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-400/30 bg-green-400/5 backdrop-blur-sm text-green-300 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-400/30 bg-green-400/5 backdrop-blur-sm text-green-300 text-sm font-medium mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -54,353 +40,329 @@ export function ForWho() {
               animate={{ opacity: [1, 0.4, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <span className="font-mono">TARGET_ANALYSIS.exe</span>
-            <motion.div
-              animate={{ x: [0, 2, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <ChevronRight className="w-3 h-3" />
-            </motion.div>
+            <Target className="w-3 h-3" />
+            <span className="font-mono">TARGET AUDIENCE</span>
           </motion.div>
 
           <motion.h2
-            className="text-6xl font-bold tracking-tight mb-6 font-mono relative"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 font-mono text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <span className="relative text-white">
-              WHO IS THIS FOR?
-              <motion.div
-                className="absolute -top-2 -right-2"
-                animate={{
-                  rotate: [0, 180, 360],
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                <Sparkles className="w-6 h-6 text-green-400" />
-              </motion.div>
-            </span>
+            <span className="text-green-400">[</span>
+            WHO IS THIS FOR
+            <span className="text-green-400">]</span>
           </motion.h2>
 
           <motion.p
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Built for{" "}
             <span className="text-green-300 font-semibold">
-              elite AI creators
+              professional developers
             </span>{" "}
-            who demand{" "}
-            <span className="text-gray-200 font-semibold">
-              enterprise-grade tools
+            who need{" "}
+            <span className="text-white font-semibold">
+              enterprise-grade solutions
             </span>{" "}
             to monetize their digital assets
           </motion.p>
         </motion.div>
 
-        {/* 优化的主要卡片 */}
-        <motion.div
-          className="mb-20"
-          initial={{ opacity: 0, y: 60 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <div className="relative group">
-            {/* 简化背景层 */}
-            <motion.div
-              className="absolute -inset-2 bg-gradient-to-r from-green-600/8 to-emerald-600/8 rounded-3xl blur-xl"
-              animate={{
-                scale: [1, 1.02, 1],
-                opacity: [0.6, 0.8, 0.6],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* 移除复杂的角落装饰，使用简单边框效果 */}
-            <motion.div
-              className="absolute inset-0 rounded-3xl border border-green-500/10"
-              animate={{
-                borderColor: [
-                  "rgba(34, 197, 94, 0.1)",
-                  "rgba(34, 197, 94, 0.2)",
-                  "rgba(34, 197, 94, 0.1)",
-                ],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* 简化网格动画 */}
-            <div className="absolute inset-0 opacity-[0.02]">
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.3)_1px,transparent_1px)] bg-[size:20px_20px] rounded-3xl" />
-            </div>
-
-            <div className="relative bg-gradient-to-br from-gray-900/85 via-gray-900/75 to-gray-800/85 backdrop-blur-xl border border-green-500/20 rounded-3xl p-12 shadow-2xl shadow-green-500/5">
-              <div className="text-center space-y-8">
-                <div className="relative">
-                  <motion.div
-                    className="w-24 h-24 mx-auto bg-gradient-to-br from-green-600 to-emerald-700 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-2xl shadow-green-500/25"
-                    animate={{
-                      scale: [1, 1.03, 1],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-green-400/15 to-emerald-500/15"
-                      animate={{ opacity: [0.2, 0.4, 0.2] }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                    />
-                    <Zap className="w-12 h-12 text-white relative z-10 drop-shadow-lg" />
-                  </motion.div>
-
-                  {/* 简化旋转环效果 */}
-                  <motion.div
-                    className="absolute -inset-4 border border-green-500/8 rounded-3xl"
-                    animate={{ rotate: 360 }}
-                    transition={{
-                      duration: 25,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                  />
-                </div>
-
-                <div>
-                  <motion.h3
-                    className="text-4xl font-bold mb-4 font-mono text-white drop-shadow-lg"
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.8, delay: 0.7 }}
-                  >
-                    <span className="text-green-400">&lt;</span>
-                    Elite AI Engineers
-                    <span className="text-green-400">/&gt;</span>
-                  </motion.h3>
-                  <motion.p
-                    className="text-lg text-gray-200 max-w-4xl mx-auto leading-relaxed"
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                  >
-                    You've mastered AI generation pipelines, understand{" "}
-                    <span className="text-green-300 font-medium">
-                      scalable architecture
-                    </span>
-                    , and are ready to deploy{" "}
-                    <span className="text-gray-300 font-medium">
-                      production-grade
-                    </span>{" "}
-                    monetization systems.
-                  </motion.p>
-                </div>
-
-                {/* 简化徽章动画 */}
-                <motion.div
-                  className="flex flex-wrap justify-center gap-3"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.9 }}
-                >
-                  {techFeatures.map((feature, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
-                    >
-                      <Badge className="px-4 py-2 text-sm font-mono bg-gray-800/90 border border-gray-600/60 text-gray-200 backdrop-blur-sm shadow-lg">
-                        {feature.icon && (
-                          <feature.icon className="w-3 h-3 mr-2" />
-                        )}
-                        {feature.label}
-                      </Badge>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* 优化的网格布局 */}
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-          {techTargets.map((target, index) => (
+        {/* 卡片瀑布流布局 */}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-0">
+          {audienceTypes.map((audience, index) => (
             <motion.div
               key={index}
-              className="group relative"
-              initial={{ opacity: 0, y: 30 }}
+              className="break-inside-avoid mb-8"
+              initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
-                duration: 0.6,
-                delay: 1.2 + index * 0.2,
+                duration: 0.8,
+                delay: 0.6 + index * 0.15,
                 ease: "easeOut",
               }}
             >
-              {/* 简化背景效果 */}
-              <motion.div
-                className="absolute -inset-1 bg-gradient-to-br from-green-500/6 via-gray-800/8 to-emerald-500/6 rounded-2xl blur-sm"
-                animate={{
-                  opacity: [0.5, 0.7, 0.5],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  delay: index * 0.8,
-                }}
-              />
-
-              {/* 简化发光边框 */}
-              <motion.div
-                className="absolute inset-0 rounded-2xl border border-green-500/8"
-                animate={{
-                  borderColor: [
-                    "rgba(34, 197, 94, 0.08)",
-                    "rgba(34, 197, 94, 0.15)",
-                    "rgba(34, 197, 94, 0.08)",
-                  ],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: index * 0.5,
-                }}
-              />
-
-              <div className="relative backdrop-blur-xl border border-gray-700/40 rounded-2xl p-8 bg-gradient-to-br from-gray-900/70 via-gray-900/50 to-gray-800/70">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <motion.div
-                      className="w-14 h-14 bg-gradient-to-br from-gray-800/90 to-gray-900/90 rounded-xl flex items-center justify-center border border-gray-600/50 backdrop-blur-sm shadow-lg"
-                      animate={{
-                        boxShadow: [
-                          "0 0 15px rgba(34, 197, 94, 0.1)",
-                          "0 0 25px rgba(34, 197, 94, 0.2)",
-                          "0 0 15px rgba(34, 197, 94, 0.1)",
-                        ],
-                      }}
-                      transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        delay: index * 0.3,
-                      }}
-                    >
-                      <target.icon className="w-7 h-7 text-green-400 drop-shadow-lg" />
-                    </motion.div>
-                    <h4 className="text-xl font-semibold text-white font-mono">
-                      {target.title}
-                    </h4>
-                  </div>
-                  <p className="text-gray-200 leading-relaxed">
-                    {target.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {target.tags.map((tag, tagIndex) => (
-                      <motion.span
-                        key={tagIndex}
-                        className="text-xs px-3 py-1 bg-gray-800/80 border border-gray-600/40 rounded-full text-gray-300 font-mono backdrop-blur-sm"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                        transition={{
-                          duration: 0.3,
-                          delay: 1.4 + index * 0.2 + tagIndex * 0.1,
-                        }}
-                      >
-                        {tag}
-                      </motion.span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <AudienceCard audience={audience} index={index} />
             </motion.div>
           ))}
         </div>
 
-        {/* 简化的CTA按钮 */}
+        {/* 技术要求说明 */}
         <motion.div
           className="mt-24 text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 2 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
         >
-          <motion.div
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-700 text-white rounded-full font-mono font-medium cursor-pointer shadow-xl shadow-green-500/20 backdrop-blur-sm"
-            whileTap={{ scale: 0.98 }}
-            animate={{
-              boxShadow: [
-                "0 0 25px rgba(34, 197, 94, 0.2)",
-                "0 0 35px rgba(34, 197, 94, 0.3)",
-                "0 0 25px rgba(34, 197, 94, 0.2)",
-              ],
-            }}
-            transition={{
-              scale: { duration: 0.2 },
-              boxShadow: { duration: 3, repeat: Infinity },
-            }}
-          >
+          <div className="relative bg-gradient-to-br from-black/60 via-black/40 to-gray-900/40 backdrop-blur-2xl border border-gray-700/50 rounded-3xl p-10 lg:p-12 max-w-5xl mx-auto shadow-2xl shadow-black/20 overflow-hidden">
+            {/* 顶部光效线 */}
             <motion.div
-              className="w-2 h-2 bg-white rounded-full"
+              className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-400/50 to-transparent"
               animate={{
-                opacity: [1, 0.6, 1],
+                opacity: [0.3, 0.8, 0.3],
               }}
-              transition={{ duration: 2, repeat: Infinity }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+              }}
             />
-            <TrendingUp className="w-5 h-5" />
-            <span>INITIALIZE_MONETIZATION.run()</span>
-          </motion.div>
+
+            {/* 角落装饰 */}
+            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-green-400/8 to-transparent rounded-br-3xl" />
+            <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-green-400/5 to-transparent rounded-tl-3xl" />
+
+            <div className="space-y-8 relative z-10">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <motion.div
+                  className="w-12 h-12 bg-black/50 rounded-xl flex items-center justify-center border border-green-400/30"
+                  animate={{
+                    borderColor: [
+                      "rgba(34, 197, 94, 0.3)",
+                      "rgba(34, 197, 94, 0.6)",
+                      "rgba(34, 197, 94, 0.3)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                  }}
+                >
+                  <Code2 className="w-6 h-6 text-green-400" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-white font-mono">
+                  Technical Requirements
+                </h3>
+              </div>
+
+              <p className="text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
+                Designed for developers with experience in modern web
+                technologies and cloud infrastructure
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
+                {techRequirements.map((tech, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center gap-2 px-5 py-3 bg-black/60 border border-gray-600/40 rounded-full text-sm text-gray-200 font-mono backdrop-blur-sm shadow-lg"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{
+                      duration: 0.4,
+                      delay: 1.7 + index * 0.1,
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      borderColor: "rgba(34, 197, 94, 0.3)",
+                      backgroundColor: "rgba(0, 0, 0, 0.8)",
+                    }}
+                  >
+                    {tech.icon && (
+                      <tech.icon className="w-4 h-4 text-green-400" />
+                    )}
+                    <span>{tech.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
   );
 }
 
-const techFeatures = [
-  { label: "1000+ Assets", icon: Database },
-  { label: "ML Pipeline", icon: Cpu },
-  { label: "Global CDN", icon: Globe },
-  { label: "Enterprise Security", icon: Shield },
-  { label: "API-First", icon: Code2 },
+// 简化的受众卡片组件
+function AudienceCard({ audience, index }: { audience: any; index: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <div
+      ref={ref}
+      className="relative bg-gradient-to-br from-black/60 via-black/40 to-gray-900/40 backdrop-blur-2xl border border-gray-700/50 rounded-3xl p-8 overflow-hidden group cursor-pointer shadow-xl shadow-black/20"
+    >
+      {/* 顶部光效线 */}
+      <motion.div
+        className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-400/50 to-transparent"
+        animate={{
+          opacity: [0.3, 0.7, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          delay: index * 0.8,
+        }}
+      />
+
+      {/* 角落装饰 */}
+      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-green-400/8 to-transparent rounded-bl-3xl" />
+
+      {/* 悬浮光效 */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-green-400/0 via-green-400/0 to-green-400/5 rounded-3xl opacity-0 group-hover:opacity-100"
+        transition={{ duration: 0.3 }}
+      />
+
+      <div className="relative z-10 space-y-6">
+        {/* 头部区域 */}
+        <div className="flex items-start gap-5">
+          <motion.div
+            className="w-16 h-16 bg-gradient-to-br from-black/80 to-gray-800/60 rounded-2xl flex items-center justify-center border border-green-400/20 shrink-0 shadow-lg"
+            animate={{
+              borderColor: [
+                "rgba(34, 197, 94, 0.2)",
+                "rgba(34, 197, 94, 0.5)",
+                "rgba(34, 197, 94, 0.2)",
+              ],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: index * 0.7,
+            }}
+            whileHover={{ scale: 1.1, rotate: 5 }}
+          >
+            <audience.icon className="w-8 h-8 text-green-400" />
+          </motion.div>
+          <div className="flex-1">
+            <h4 className="text-xl font-bold text-white font-mono leading-tight mb-2 group-hover:text-green-100 transition-colors">
+              {audience.title}
+            </h4>
+            <p className="text-sm text-green-300 font-mono font-medium">
+              {audience.subtitle}
+            </p>
+          </div>
+        </div>
+
+        {/* 描述区域 */}
+        <p className="text-gray-200 leading-relaxed text-base group-hover:text-gray-100 transition-colors">
+          {audience.description}
+        </p>
+
+        {/* 技能标签区域 */}
+        <div className="space-y-4">
+          <h5 className="text-xs font-mono text-gray-400 uppercase tracking-wider font-semibold">
+            Core Skills
+          </h5>
+          <div className="flex flex-wrap gap-3">
+            {audience.skills.map((skill: string, skillIndex: number) => (
+              <motion.span
+                key={skillIndex}
+                className="text-xs px-4 py-2 bg-black/60 border border-gray-600/40 rounded-full text-gray-200 font-mono backdrop-blur-sm shadow-md group-hover:border-green-400/30 group-hover:bg-green-400/5 transition-all"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.8 + index * 0.2 + skillIndex * 0.1,
+                }}
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+
+        {/* 经验等级区域 */}
+        <div className="pt-4 border-t border-gray-700/50">
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-mono text-gray-300 font-medium">
+              Experience Level
+            </span>
+            <div className="flex gap-2">
+              {[...Array(audience.level)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="w-2.5 h-2.5 bg-green-400 rounded-full shadow-sm shadow-green-400/50"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{
+                    duration: 0.2,
+                    delay: 1 + index * 0.2 + i * 0.1,
+                  }}
+                />
+              ))}
+              {[...Array(5 - audience.level)].map((_, i) => (
+                <div key={i} className="w-2.5 h-2.5 bg-gray-600 rounded-full" />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const audienceTypes = [
+  {
+    title: "Full-Stack Developers",
+    subtitle: "Frontend + Backend",
+    description:
+      "Experienced developers who understand both client and server-side technologies, ready to build complete monetization platforms.",
+    icon: Code2,
+    skills: ["React/Next.js", "Node.js", "Database Design", "API Development"],
+    level: 4,
+  },
+  {
+    title: "DevOps Engineers",
+    subtitle: "Infrastructure + Automation",
+    description:
+      "Cloud infrastructure specialists who want to automate deployment, scaling, and monitoring of image delivery systems.",
+    icon: Globe,
+    skills: ["AWS/Cloudflare", "CI/CD", "Docker", "Monitoring"],
+    level: 5,
+  },
+  {
+    title: "Product Engineers",
+    subtitle: "Business + Technology",
+    description:
+      "Technical product builders who combine business acumen with engineering skills to create profitable digital products.",
+    icon: Target,
+    skills: ["MVP Development", "Analytics", "User Research", "Growth"],
+    level: 3,
+  },
+  {
+    title: "AI Engineers",
+    subtitle: "Machine Learning + Computer Vision",
+    description:
+      "Specialists in AI/ML who want to productionize their computer vision models and image generation systems.",
+    icon: Cpu,
+    skills: ["Computer Vision", "ML Pipelines", "Model Optimization", "Python"],
+    level: 5,
+  },
+  {
+    title: "Startup Founders",
+    subtitle: "Vision + Execution",
+    description:
+      "Technical founders building image-centric startups who need enterprise-grade infrastructure from day one.",
+    icon: TrendingUp,
+    skills: [
+      "Product Strategy",
+      "Team Building",
+      "Fundraising",
+      "Tech Leadership",
+    ],
+    level: 4,
+  },
+  {
+    title: "Enterprise Architects",
+    subtitle: "Scale + Security",
+    description:
+      "Senior engineers designing large-scale systems who need proven patterns for image asset management and distribution.",
+    icon: Shield,
+    skills: ["System Design", "Security", "Performance", "Compliance"],
+    level: 5,
+  },
 ];
 
-const techTargets = [
-  {
-    title: "AI Architects",
-    description:
-      "Full-stack creators building sophisticated AI art generation systems with advanced prompt engineering and model optimization expertise.",
-    icon: Cpu,
-    tags: ["ML/AI", "Scalable", "Production"],
-  },
-  {
-    title: "DevOps Artists",
-    description:
-      "Technical creators who understand CI/CD pipelines, cloud infrastructure, and want to automate their AI art monetization workflows.",
-    icon: Globe,
-    tags: ["Cloud", "Automation", "Infrastructure"],
-  },
-  {
-    title: "Data Engineers",
-    description:
-      "Analytics-driven creators who leverage data science techniques to optimize content performance and revenue generation algorithms.",
-    icon: Database,
-    tags: ["Analytics", "Optimization", "Data-Driven"],
-  },
+const techRequirements = [
+  { label: "TypeScript", icon: Code2 },
+  { label: "Cloud Services", icon: Globe },
+  { label: "Database Design", icon: Database },
+  { label: "REST APIs", icon: Zap },
+  { label: "Modern Frontend", icon: Sparkles },
 ];
