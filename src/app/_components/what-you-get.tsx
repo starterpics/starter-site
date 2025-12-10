@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import {
   Database,
   Globe,
+  type LucideIcon,
   Search,
   Settings,
   Shield,
@@ -76,14 +77,14 @@ export function WhatYouGet() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="relative bg-gradient-to-br from-gray-900/60 via-gray-900/40 to-black/40 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 h-full overflow-hidden group-hover:border-green-400/30 transition-all duration-500">
+            <div className="relative bg-linear-to-br from-gray-900/60 via-gray-900/40 to-black/40 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 h-full overflow-hidden group-hover:border-green-400/30 transition-all duration-500">
               {/* 角落装饰 */}
-              <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-green-400/10 to-transparent rounded-br-full" />
-              <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-green-400/5 to-transparent rounded-tl-full" />
+              <div className="absolute top-0 left-0 w-20 h-20 bg-linear-to-br from-green-400/10 to-transparent rounded-br-full" />
+              <div className="absolute bottom-0 right-0 w-16 h-16 bg-linear-to-tl from-green-400/5 to-transparent rounded-tl-full" />
 
               {/* 顶部光效带 */}
               <motion.div
-                className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-400/60 to-transparent"
+                className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-green-400/60 to-transparent"
                 animate={{
                   opacity: [0.3, 0.8, 0.3],
                   scale: [1, 1.02, 1],
@@ -98,7 +99,7 @@ export function WhatYouGet() {
               <div className="relative z-10">
                 <div className="flex items-start gap-5 mb-8">
                   <motion.div
-                    className="w-16 h-16 shrink-0 bg-gradient-to-br from-black/80 to-gray-800/60 rounded-2xl flex items-center justify-center border border-green-400/20 shadow-lg"
+                    className="w-16 h-16 shrink-0 bg-linear-to-br from-black/80 to-gray-800/60 rounded-2xl flex items-center justify-center border border-green-400/20 shadow-lg"
                     whileHover={{ scale: 1.05 }}
                     animate={{
                       borderColor: [
@@ -299,7 +300,7 @@ function FeatureCard({
 }) {
   return (
     <motion.div
-      className="relative bg-gradient-to-br from-gray-900/50 via-gray-900/30 to-black/30 backdrop-blur-xl border border-gray-700/40 rounded-3xl p-6 h-full overflow-hidden group cursor-pointer"
+      className="relative bg-linear-to-br from-gray-900/50 via-gray-900/30 to-black/30 backdrop-blur-xl border border-gray-700/40 rounded-3xl p-6 h-full overflow-hidden group cursor-pointer"
       whileHover={{
         scale: 1.02,
         borderColor: "rgba(34, 197, 94, 0.3)",
@@ -307,11 +308,11 @@ function FeatureCard({
       transition={{ duration: 0.2 }}
     >
       {/* 角落装饰 */}
-      <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-bl from-green-400/5 to-transparent rounded-bl-full" />
+      <div className="absolute top-0 right-0 w-12 h-12 bg-linear-to-bl from-green-400/5 to-transparent rounded-bl-full" />
 
       {/* 顶部光效线 */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-400/40 to-transparent"
+        className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-green-400/40 to-transparent"
         animate={{
           opacity: [0.2, 0.6, 0.2],
         }}
@@ -323,14 +324,14 @@ function FeatureCard({
 
       {/* 悬浮光效 */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-green-400/0 via-green-400/0 to-green-400/5 rounded-3xl opacity-0 group-hover:opacity-100"
+        className="absolute inset-0 bg-linear-to-br from-green-400/0 via-green-400/0 to-green-400/5 rounded-3xl opacity-0 group-hover:opacity-100"
         transition={{ duration: 0.3 }}
       />
 
       <div className="relative z-10">
         <div className="flex items-start gap-4 mb-4">
           <motion.div
-            className="w-12 h-12 shrink-0 bg-gradient-to-br from-black/70 to-gray-800/50 rounded-2xl flex items-center justify-center border border-green-400/20 shadow-md"
+            className="w-12 h-12 shrink-0 bg-linear-to-br from-black/70 to-gray-800/50 rounded-2xl flex items-center justify-center border border-green-400/20 shadow-md"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
@@ -357,14 +358,14 @@ function WideFeatureCard({
   description,
   tags,
 }: {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   description: string;
   tags: string[];
 }) {
   return (
     <motion.div
-      className="relative bg-gradient-to-br from-gray-900/50 via-gray-900/30 to-black/30 backdrop-blur-xl border border-gray-700/40 rounded-3xl p-6 h-full overflow-hidden group cursor-pointer"
+      className="relative bg-linear-to-br from-gray-900/50 via-gray-900/30 to-black/30 backdrop-blur-xl border border-gray-700/40 rounded-3xl p-6 h-full overflow-hidden group cursor-pointer"
       whileHover={{
         scale: 1.01,
         borderColor: "rgba(34, 197, 94, 0.3)",
@@ -372,12 +373,12 @@ function WideFeatureCard({
       transition={{ duration: 0.2 }}
     >
       {/* 装饰元素 */}
-      <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-green-400/8 to-transparent rounded-br-full" />
-      <div className="absolute bottom-0 right-0 w-12 h-12 bg-gradient-to-tl from-green-400/5 to-transparent rounded-tl-full" />
+      <div className="absolute top-0 left-0 w-16 h-16 bg-linear-to-br from-green-400/8 to-transparent rounded-br-full" />
+      <div className="absolute bottom-0 right-0 w-12 h-12 bg-linear-to-tl from-green-400/5 to-transparent rounded-tl-full" />
 
       {/* 顶部光效线 */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-400/40 to-transparent"
+        className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-green-400/40 to-transparent"
         animate={{
           opacity: [0.2, 0.6, 0.2],
         }}
@@ -389,14 +390,14 @@ function WideFeatureCard({
 
       {/* 悬浮光效 */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-green-400/0 via-green-400/0 to-green-400/5 rounded-3xl opacity-0 group-hover:opacity-100"
+        className="absolute inset-0 bg-linear-to-br from-green-400/0 via-green-400/0 to-green-400/5 rounded-3xl opacity-0 group-hover:opacity-100"
         transition={{ duration: 0.3 }}
       />
 
       <div className="relative z-10">
         <div className="flex items-start gap-4 mb-4">
           <motion.div
-            className="w-12 h-12 shrink-0 bg-gradient-to-br from-black/70 to-gray-800/50 rounded-2xl flex items-center justify-center border border-green-400/20 shadow-md"
+            className="w-12 h-12 shrink-0 bg-linear-to-br from-black/70 to-gray-800/50 rounded-2xl flex items-center justify-center border border-green-400/20 shadow-md"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >

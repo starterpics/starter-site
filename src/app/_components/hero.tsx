@@ -55,7 +55,7 @@ export function Hero() {
                 Transform Your Images Into
               </span>
               <motion.span
-                className="block bg-gradient-to-r from-green-400 via-green-300 to-emerald-400 bg-clip-text text-transparent relative"
+                className="block bg-linear-to-r from-green-400 via-green-300 to-emerald-400 bg-clip-text text-transparent relative"
                 animate={{
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                 }}
@@ -104,7 +104,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               {/* Primary CTA */}
               <motion.button
-                className="bg-gradient-to-r from-green-500 to-emerald-600 text-black font-mono font-bold text-xl px-10 py-4 rounded-xl shadow-lg transition-all duration-300"
+                className="bg-linear-to-r from-green-500 to-emerald-600 text-black font-mono font-bold text-xl px-10 py-4 rounded-xl shadow-lg transition-all duration-300"
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex items-center justify-center gap-3">
@@ -164,7 +164,7 @@ export function Hero() {
                 transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
               >
                 <motion.div
-                  className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-gray-800/90 to-gray-900/90 border border-gray-600/50 flex items-center justify-center shadow-lg"
+                  className="w-12 h-12 mx-auto mb-4 rounded-xl bg-linear-to-br from-gray-800/90 to-gray-900/90 border border-gray-600/50 flex items-center justify-center shadow-lg"
                   animate={{
                     boxShadow: [
                       "0 0 10px rgba(34, 197, 94, 0.1)",

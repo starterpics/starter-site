@@ -61,7 +61,7 @@ export function Background() {
       }}
     >
       {/* 基础渐变层 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-black to-gray-900/30" />
+      <div className="absolute inset-0 bg-linear-to-br from-gray-900/40 via-black to-gray-900/30" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.08),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(156,163,175,0.05),transparent_50%)]" />
 
@@ -253,7 +253,7 @@ export function Background() {
       {/* 能量流 - 恢复三条 */}
       <div className="absolute inset-0 opacity-10">
         <motion.div
-          className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-green-400/50 to-transparent"
+          className="absolute top-0 left-0 w-1 h-full bg-linear-to-b from-transparent via-green-400/50 to-transparent"
           style={{
             willChange: "transform",
             contain: "layout style paint",
@@ -269,7 +269,7 @@ export function Background() {
           }}
         />
         <motion.div
-          className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent"
+          className="absolute top-0 left-0 h-1 w-full bg-linear-to-r from-transparent via-emerald-400/50 to-transparent"
           style={{
             willChange: "transform",
             contain: "layout style paint",
@@ -285,7 +285,7 @@ export function Background() {
           }}
         />
         <motion.div
-          className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent"
+          className="absolute top-0 right-0 w-1 h-full bg-linear-to-b from-transparent via-cyan-400/30 to-transparent"
           style={{
             willChange: "transform",
             contain: "layout style paint",
@@ -304,7 +304,7 @@ export function Background() {
 
       {/* 背景脉动 */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-green-900/5 via-transparent to-emerald-900/5"
+        className="absolute inset-0 bg-linear-to-br from-green-900/5 via-transparent to-emerald-900/5"
         style={{
           willChange: "transform, opacity",
           contain: "layout style paint",

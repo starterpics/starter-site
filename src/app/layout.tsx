@@ -1,7 +1,8 @@
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
-
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
@@ -16,7 +17,13 @@ export default function RootLayout({
   return (
     <html className={`font-sans`} lang="en">
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <Header />
+
+          {children}
+
+          <Footer />
+        </TRPCReactProvider>
       </body>
     </html>
   );

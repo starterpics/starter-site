@@ -99,10 +99,10 @@ export function ForWho() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.5 }}
         >
-          <div className="relative bg-gradient-to-br from-black/60 via-black/40 to-gray-900/40 backdrop-blur-2xl border border-gray-700/50 rounded-3xl p-10 lg:p-12 max-w-5xl mx-auto shadow-2xl shadow-black/20 overflow-hidden">
+          <div className="relative bg-linear-to-br from-black/60 via-black/40 to-gray-900/40 backdrop-blur-2xl border border-gray-700/50 rounded-3xl p-10 lg:p-12 max-w-5xl mx-auto shadow-2xl shadow-black/20 overflow-hidden">
             {/* 顶部光效线 */}
             <motion.div
-              className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-400/50 to-transparent"
+              className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-green-400/50 to-transparent"
               animate={{
                 opacity: [0.3, 0.8, 0.3],
               }}
@@ -113,8 +113,8 @@ export function ForWho() {
             />
 
             {/* 角落装饰 */}
-            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-green-400/8 to-transparent rounded-br-3xl" />
-            <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-green-400/5 to-transparent rounded-tl-3xl" />
+            <div className="absolute top-0 left-0 w-20 h-20 bg-linear-to-br from-green-400/8 to-transparent rounded-br-3xl" />
+            <div className="absolute bottom-0 right-0 w-16 h-16 bg-linear-to-tl from-green-400/5 to-transparent rounded-tl-3xl" />
 
             <div className="space-y-8 relative z-10">
               <div className="flex items-center justify-center gap-3 mb-6">
@@ -184,11 +184,11 @@ function AudienceCard({ audience, index }: { audience: any; index: number }) {
   return (
     <div
       ref={ref}
-      className="relative bg-gradient-to-br from-black/60 via-black/40 to-gray-900/40 backdrop-blur-2xl border border-gray-700/50 rounded-3xl p-8 overflow-hidden group cursor-pointer shadow-xl shadow-black/20"
+      className="relative bg-linear-to-br from-black/60 via-black/40 to-gray-900/40 backdrop-blur-2xl border border-gray-700/50 rounded-3xl p-8 overflow-hidden group cursor-pointer shadow-xl shadow-black/20"
     >
       {/* 顶部光效线 */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-400/50 to-transparent"
+        className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-green-400/50 to-transparent"
         animate={{
           opacity: [0.3, 0.7, 0.3],
         }}
@@ -200,11 +200,11 @@ function AudienceCard({ audience, index }: { audience: any; index: number }) {
       />
 
       {/* 角落装饰 */}
-      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-green-400/8 to-transparent rounded-bl-3xl" />
+      <div className="absolute top-0 right-0 w-16 h-16 bg-linear-to-bl from-green-400/8 to-transparent rounded-bl-3xl" />
 
       {/* 悬浮光效 */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-green-400/0 via-green-400/0 to-green-400/5 rounded-3xl opacity-0 group-hover:opacity-100"
+        className="absolute inset-0 bg-linear-to-br from-green-400/0 via-green-400/0 to-green-400/5 rounded-3xl opacity-0 group-hover:opacity-100"
         transition={{ duration: 0.3 }}
       />
 
@@ -212,7 +212,7 @@ function AudienceCard({ audience, index }: { audience: any; index: number }) {
         {/* 头部区域 */}
         <div className="flex items-start gap-5">
           <motion.div
-            className="w-16 h-16 bg-gradient-to-br from-black/80 to-gray-800/60 rounded-2xl flex items-center justify-center border border-green-400/20 shrink-0 shadow-lg"
+            className="w-16 h-16 bg-linear-to-br from-black/80 to-gray-800/60 rounded-2xl flex items-center justify-center border border-green-400/20 shrink-0 shadow-lg"
             animate={{
               borderColor: [
                 "rgba(34, 197, 94, 0.2)",

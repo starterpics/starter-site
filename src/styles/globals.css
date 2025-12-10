@@ -124,3 +124,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  --sb-track-color: #000;
+  --sb-thumb-color: #006935;
+  --sb-size: 6px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-linear-to-b from-green-400/80 to-emerald-600/80;
+  border-radius: var(--sb-size);
+}
