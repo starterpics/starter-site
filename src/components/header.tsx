@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Menu, X, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
+import { LogoIcon } from "./logo";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,7 @@ export function Header() {
               whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ duration: 0.2 }}
             >
-              <Zap className="w-6 h-6 text-white" />
+              <LogoIcon className="w-6 h-6 text-white" />
             </motion.div>
             <h1 className="text-xl font-bold text-white font-mono">
               StarterPics
