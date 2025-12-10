@@ -57,7 +57,7 @@ export function Footer() {
                   <Zap className="w-7 h-7 text-white" />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-white font-mono">
-                  StarterpicsAI
+                  StarterPics
                 </h3>
               </div>
 
@@ -188,7 +188,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Copyright */}
             <div className="flex items-center gap-2 text-gray-400 text-sm font-mono">
-              <span>© 2024 StarterpicsAI. Built with</span>
+              <span>© 2024 StarterPics. Built with</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity, repeatDelay: 3 }}

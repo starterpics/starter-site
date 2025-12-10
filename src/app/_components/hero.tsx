@@ -104,7 +104,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               {/* Primary CTA */}
               <motion.button
-                className="bg-linear-to-r from-green-500 to-emerald-600 text-black font-mono font-bold text-xl px-10 py-4 rounded-xl shadow-lg transition-all duration-300"
+                className="bg-linear-to-r from-green-500 to-emerald-600 text-white/80 font-mono font-bold text-xl px-10 py-4 rounded-xl shadow-lg transition-all duration-300"
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex items-center justify-center gap-3">
@@ -142,7 +142,7 @@ export function Hero() {
               },
               {
                 icon: Shield,
-                title: "Google Safe",
+                title: "Google Search Safe",
                 desc: "Anti-spam architecture",
               },
               {
