@@ -294,7 +294,7 @@ function FeatureCard({
   title,
   description,
 }: {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   description: string;
 }) {

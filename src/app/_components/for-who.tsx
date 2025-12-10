@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import {
-  ChevronRight,
   Code2,
   Cpu,
   Database,
@@ -177,7 +176,13 @@ export function ForWho() {
 }
 
 // 简化的受众卡片组件
-function AudienceCard({ audience, index }: { audience: any; index: number }) {
+function AudienceCard({
+  audience,
+  index,
+}: {
+  audience: (typeof audienceTypes)[number];
+  index: number;
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
