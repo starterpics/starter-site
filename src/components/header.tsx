@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ExternalLink, Github, Menu, X, Zap } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function Header() {
@@ -74,9 +74,7 @@ export function Header() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   whileHover={{ y: -1 }}
                 >
-                  {item.icon && <item.icon className="w-4 h-4" />}
                   {item.label}
-                  {item.external && <ExternalLink className="w-3 h-3" />}
                 </motion.a>
               </div>
             ))}
@@ -149,9 +147,7 @@ export function Header() {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 onClick={() => setIsOpen(false)}
               >
-                {item.icon && <item.icon className="w-4 h-4" />}
                 {item.label}
-                {item.external && <ExternalLink className="w-3 h-3" />}
               </motion.a>
             ))}
 
@@ -191,11 +187,5 @@ const navItems = [
   {
     label: "Blog",
     href: "/blog",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com",
-    icon: Github,
-    external: true,
   },
 ];
